@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "sdf": {
+      "commandName": "Project",
+      "commandLineArgs": "< \"$(ProjectDir)test.txt\""
+    }
+  }
+}
