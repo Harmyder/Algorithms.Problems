@@ -20,6 +20,14 @@ namespace LeetCode
             PrintResult_Internal(elapsed, expected, actual, paramsString);
         }
 
+        public static void PrintResult<T1, T2, T3, TResult>(TResult expected, Func<T1, T2, T3, TResult> func, T1 param1, T2 param2, T3 param3)
+        {
+            TResult actual = default;
+            var elapsed = BenchmarkOnMilliseconds(() => actual = func(param1, param2, param3));
+            var paramsString = $"{param1}, {param2}, {param3}";
+            PrintResult_Internal(elapsed, expected, actual, paramsString);
+        }
+
         public static void PrintResult<T1, T2, T3, T4, TResult>(TResult expected, Func<T1, T2, T3, T4, TResult> func, T1 param1, T2 param2, T3 param3, T4 param4)
         {
             TResult actual = default;
@@ -49,6 +57,14 @@ namespace LeetCode
             IEnumerable<TResult> actual = null;
             var elapsed = BenchmarkOnMilliseconds(() => actual = func(param1, param2));
             var paramsString = $"{param1}, {param2}";
+            PrintResult_Internal(elapsed, expected, actual, paramsString);
+        }
+
+        public static void PrintResultEnumerable<T1, T2, T3, T4, TResult>(IEnumerable<TResult> expected, Func<T1, T2, T3, T4, IEnumerable<TResult>> func, T1 param1, T2 param2, T3 param3, T4 param4)
+        {
+            IEnumerable<TResult> actual = null;
+            var elapsed = BenchmarkOnMilliseconds(() => actual = func(param1, param2, param3, param4));
+            var paramsString = $"{param1}, {param2}, {param3}, {param4}";
             PrintResult_Internal(elapsed, expected, actual, paramsString);
         }
 

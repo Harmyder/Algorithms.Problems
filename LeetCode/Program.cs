@@ -1,86 +1,90 @@
 ﻿using LeetCode;
 using LeetCode.Tasks;
+using LeetCode.Mettle;
 
-//var max = int.MinValue;
-//var total = 0;
+//Utils.PrintResultEnumerable(expectedOutput, func, inputParameters);
 
-//for (var i = 1; i < 10000; ++i)
-//{
-//    var count = 0;
-//    for (var j = 1; j < i; ++j)
-//    {
-//        if (i % j == 0) ++count;
-//    }
-//    max = Math.Max(count, max);
-//    total += count;
-//}
-//Console.WriteLine(max);
-//Console.WriteLine(total);
-
-//var maxValue = 10000;
-//var table = new int[maxValue + 1, maxValue + 1];
-//var divs = new int[maxValue + 1];
-//for (var i = 1; i <= maxValue; ++i)
-//{
-//    for (var j = 1; j < i; ++j)
-//    {
-//        if (i % j == 0)
-//        {
-//            table[i, j] = 1;
-//            ++divs[i];
-//        }
-//    }
-//}
-//var by3 = 0;
-//for (var i = 1; i <= maxValue; ++i)
-//{
-//    for (var j = 1; j < i; ++j)
-//    {
-//        if (i % j == 0)
-//        {
-//            by3 += divs[j];
-//        }
-//    }
-//}
-
-//var by2 = table.Cast<int>().Sum();
-//var byLenCounts = new int[100];
+Utils.PrintResult(0, new Task1().Solve, 1);
 
 
+Console.WriteLine();
+
+Utils.PrintResultEnumerable(new[] { -1, 1, 0, -1 }, new MinReverseOperations().Solve, 4, 2, new int[0], 4);
+Utils.PrintResultEnumerable(new[] { 0, -1, -1, 1 }, new MinReverseOperations().Solve, 4, 0, new[] { 1, 2 }, 4);
+Utils.PrintResultEnumerable(new[] { 0, -1, -1, -1, -1 }, new MinReverseOperations().Solve, 5, 0, new[] { 2, 4 }, 3);
+Utils.PrintResultEnumerable(new[] { -1, -1, 0, -1 }, new MinReverseOperations().Solve, 4, 2, new[] { 0,1,3 }, 1);
+Utils.PrintResultEnumerable(new[] { 0, -1, -1 }, new MinReverseOperations().Solve, 3, 0, new[] { 1 }, 2);
+Utils.PrintResultEnumerable(new[] { 0, -1, -1, 1 }, new MinReverseOperations().Solve, 4, 0, new int[0], 4);
+
+Console.WriteLine();
+
+//Utils.PrintResultEnumerable(new[] { 8, 3 }, new GroupsOfStrings().GroupStrings, new[] { "ghnv", "uip", "tenv", "hvepx", "e", "ktc", "byjdt", "ulm", "cae", "ea" });
+//Utils.PrintResultEnumerable(new[] { 1, 3 }, new GroupsOfStrings().GroupStrings, new[] { "abc", "ade", "abd" });
+//Utils.PrintResultEnumerable(new[] { 2, 3 }, new GroupsOfStrings().GroupStrings, new[] { "a", "b", "ab", "cde" });
+//Utils.PrintResultEnumerable(new[] { 6, 3 }, new GroupsOfStrings().GroupStrings, new[] { "zobly", "zyqv", "emjxk", "vd", "b", "c", "a", "wqvy", "fser" });
+//Utils.PrintResultEnumerable(new[] { 7, 3 }, new GroupsOfStrings().GroupStrings, new[] { "xhg", "kove", "ti", "cs", "itfzx", "m", "nrszq", "suc", "gs" });
+//Utils.PrintResultEnumerable(new[] { 7, 2 }, new GroupsOfStrings().GroupStrings, new[] { "p", "fhag", "ds", "bns", "pw", "ynvo", "pgz", "lgrx" });
+//Utils.PrintResultEnumerable(new[] { 1, 5 }, new GroupsOfStrings().GroupStrings, new[] { "abc", "abc", "abc", "ade", "abd" });
+//Utils.PrintResultEnumerable(new[] { 6, 3 }, new GroupsOfStrings().GroupStrings, new[] { "zobly", "zyqv", "emjxk", "vd", "b", "c", "a", "wqvy", "fser" });
+//Utils.PrintResultEnumerable(new[] { 4, 1 }, new GroupsOfStrings().GroupStrings, new[] { "xo", "t", "uhc", "gf" });
+//Utils.PrintResultEnumerable(new[] { 1, 3 }, new GroupsOfStrings().GroupStrings, new[] { "a", "ab", "abc" });
+//Utils.PrintResultEnumerable(new[] { 75, 2 }, new GroupsOfStrings().GroupStrings, new[] { "eyxvifp", "jniobfegha", "kncwmhsxjp", "qvrbgnuhme", "lzmtnhxdo", "nkplcb", "xkmryis", "iybkj", "hwojzf", "brudki", "kveluogxp", "kncgfmezdv", "ykwbsxl", "ncvytgmwj", "krqzinuxm", "beucam", "ysbfve", "ibcqtsoum", "clwsozmiy", "uenqsm", "dlznvjryb", "gyshmt", "omiwl", "vjlbwspuhi", "tscaqndyhb", "zeyajcm", "evkiogcnpw", "vetndxlyf", "esbnptdfvy", "yxnqph", "adguvckty", "juayzhxl", "xzysojwn", "ijnxyahm", "fdjtoymsq", "aebnjrf", "nalbftmcd", "mqvjpsot", "ozdvxqjae", "ndiakougsf", "prufvybgcn", "rlaewuzhi", "onduwmgcep", "fvcxdk", "skbcje", "zpvyflhjdt", "vsrqxhwyf", "htgbncopf", "uxizl", "beurzqk", "mrbsi", "qgbwvdz", "oknrv", "gaxkuysrc", "hcwuebsmgr", "nyobvgect", "bpmgac", "vtxnuyrosq", "skdzaupny", "bdwvnziyk", "yrqwbxa", "poqwzaxe", "zedfbhj", "ibfawlte", "gytfca", "nmajcrfxus", "upizl", "ntjwfo", "buldyecj", "mvyza", "gqekoyxn", "poserhn", "xwndujhzs", "yimadqevoj", "ewfromcn", "zoyixfgt" });
+
+//new SuperEggDrop().Test();
+
+//Utils.PrintResult(14, new SuperEggDrop().Solve, 100, 10000);
+//Utils.PrintResult(7, new SuperEggDrop().Solve, 14, 100);
+//Utils.PrintResult(7, new SuperEggDrop().Solve, 3, 42);
+//Utils.PrintResult(4, new SuperEggDrop().Solve, 2, 7);
+//Utils.PrintResult(3, new SuperEggDrop().Solve, 2, 4);
+//Utils.PrintResult(2, new SuperEggDrop().Solve, 2, 2);
+//Utils.PrintResult(2, new SuperEggDrop().Solve, 2, 3);
+//Utils.PrintResult(3, new SuperEggDrop().Solve, 2, 6);
+//Utils.PrintResult(2, new SuperEggDrop().Solve, 1, 2);
+//Utils.PrintResult(4, new SuperEggDrop().Solve, 3, 14);
+
+//Utils.PrintResult(0, new ShortestSubarrayWithSumAtLeastK().Solve, LongInput.tle, 377684406);
+//Utils.PrintResult(3, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 2, 6, 5, 9 }, 20);
+//Utils.PrintResult(3, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { -2, 6, 7, 9, -2, -7, 5, -3, 1, 8 }, 20);
+//Utils.PrintResult(3, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { -7, 4, 9, 9, -4, -2, 9, -4, -5, 6 }, 20);
+//Utils.PrintResult(4, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 9, -4, -3, -3, 4, 3, 8, 6, -4, 9 }, 20);
+//Utils.PrintResult(7, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { -10, -5, -5, -18, 16, 7, -13, 10, 9, 14, 1, 1, 8, 12, -15, -20, 1, -14, 19, -7 }, 50);
+
+//var rnd = new Random();
 
 //while (true)
 //{
-//    var wordsCount = 1000;
-//    var words = new string[wordsCount];
-//    for (var i = 0; i < wordsCount; i++)
+//    var nums = Enumerable.Range(0, 10).Select(x => rnd.Next(-10, 10)).ToArray();
+//    var res1 = new ShortestSubarrayWithSumAtLeastK().Solve(nums, 20);
+//    var res2 = new ShortestSubarrayWithSumAtLeastK().SolveBrute(nums, 20);
+//    if (res1 != res2)
 //    {
-//        var lettersCount = new Random().Next(20) + 1;
-//        words[i] = new string(Enumerable.Repeat(0, 10).Select(n => (char)('a' + new Random().Next(26))).Distinct().ToArray());
-//    }
-
-//    words = words.Distinct().ToArray();
-
-//    var a = new GroupsOfStrings().GroupStringsOld(words);
-//    var b = new GroupsOfStrings().GroupStrings(words);
-//    if (a[0] != b[0] || a[1] != b[1])
-//    {
-//        Console.WriteLine("got it");
-//        break;
+//        Console.WriteLine($"{res1} {res2}");
+//        Console.WriteLine(string.Join(", ", nums));
 //    }
 //}
 
 
+//Utils.PrintResult(11, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 17985, -36292, -23941, 80618, 20594, -6181, 9181, 65796, -25716, 66593, -6873, 34062, 29878, 852, -4767, -36415, 11783, 8085, -41063, -39940, 74284, 66272, 82385, 51634, -48550, 9028, -30777, 86509, 44623, 9413, -38369, -1822, 46408, 35217, 72635, -16560, 85373, 52105, 39477, 3852, 45974, -21593, 15481, 47280, 73889, -42981, 54978, 95169, -19615, 93133 }, 387303);
+//Utils.PrintResult(9, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { -23, 51, -14, -6, 36, 33, 76, -26, -6, 58, -16, 1, 98, 2, -20, 48, -19, -41, -34, 62 }, 221);
+//Utils.PrintResult(9, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { -36, 10, -28, -42, 17, 83, 87, 79, 51, -26, 33, 53, 63, 61, 76, 34, 57, 68, 1, -30 }, 484);
+//Utils.PrintResult(3, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 84, -37, 32, 40, 95 }, 167);
+//Utils.PrintResult(3, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { -1, 2, -1, 2 }, 3);
+//Utils.PrintResult(3, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 2, -1, 2 }, 3);
+//Utils.PrintResult(4, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 1, 93, 5, 54, 47, -7, 23, -28, -9, 43 }, 193);
+//Utils.PrintResult(1, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 45, 95, 97, -34, -42 }, 21);
+//Utils.PrintResult(1, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 1 }, 1);
+//Utils.PrintResult(-1, new ShortestSubarrayWithSumAtLeastK().Solve, new[] { 1, 2 }, 4);
 
+Utils.PrintResult(true, new ContainsDuplicateIII().ContainsNearbyAlmostDuplicate, new[] { 1, 2, 3, 1 }, 3, 0);
+Utils.PrintResult(false, new ContainsDuplicateIII().ContainsNearbyAlmostDuplicate, new[] { 1, 5, 9, 1, 5, 9 }, 2, 3);
 
-
-Utils.PrintResultEnumerable(new[] { 10624, 4144 }, new GroupsOfStrings().GroupStrings, LongInput.tle);
-Utils.PrintResultEnumerable(new[] { 10624, 4144 }, new GroupsOfStrings().GroupStringsOld, LongInput.tle);
-Utils.PrintResultEnumerable(new[] { 1, 3 }, new GroupsOfStrings().GroupStrings, new[] { "abc", "ade", "abd" });
-Utils.PrintResultEnumerable(new[] { 8, 3 }, new GroupsOfStrings().GroupStrings, new[] { "ghnv", "uip", "tenv", "hvepx", "e", "ktc", "byjdt", "ulm", "cae", "ea" });
-Utils.PrintResultEnumerable(new[] { 6, 3 }, new GroupsOfStrings().GroupStrings, new[] { "zobly", "zyqv", "emjxk", "vd", "b", "c", "a", "wqvy", "fser" });
-Utils.PrintResultEnumerable(new[] { 4, 1 }, new GroupsOfStrings().GroupStrings, new[] { "xo", "t", "uhc", "gf" });
-Utils.PrintResultEnumerable(new[] { 2, 3 }, new GroupsOfStrings().GroupStrings, new[] { "a", "b", "ab", "cde" });
-Utils.PrintResultEnumerable(new[] { 1, 3 }, new GroupsOfStrings().GroupStrings, new[] { "a", "ab", "abc" });
+//Utils.PrintResult(true, new SplitArraySameAverage().Solve, new[] { 6795, 3310, 8624, 475, 7609, 7858, 7086, 8934, 6197, 2431, 3310, 760, 1432, 7518, 7068, 7182, 2681, 2679, 6461, 9928, 9651, 3258, 9346, 1666, 5400, 8384, 2751, 1234, 2183, 3520 });
+//Utils.PrintResult(false, new SplitArraySameAverage().Solve, new[] { 9990, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30 });
+//Utils.PrintResult(true, new SplitArraySameAverage().Solve, new[] { 5, 16, 4, 11, 4 });
+//Utils.PrintResult(true, new SplitArraySameAverage().Solve, new[] { 18, 0, 16, 2 });
+//Utils.PrintResult(true, new SplitArraySameAverage().Solve, new[] { 1, 2, 3, 4, 5, 6, 7, 8 });
+//Utils.PrintResult(false, new SplitArraySameAverage().Solve, new[] { 3, 1 });
 
 //Utils.PrintResult(1, new LongestIncreasingSubsequence2().LengthOfLIS, new[] { 1, 5 }, 1);
 //Utils.PrintResult(2, new LongestIncreasingSubsequence2().LengthOfLIS, new[] { 1, 4 }, 3);
